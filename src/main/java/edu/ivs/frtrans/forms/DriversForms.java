@@ -4,8 +4,17 @@ public class DriversForms {
     private String id = " ";
     private String name = " ";
     private String description = " ";
+    private String created_at = " ";
+    private String modified_at = " ";
 
     public DriversForms() {
+    }
+
+    public DriversForms(String name, String description, String created_at, String modified_at) {
+        this.name = name;
+        this.description = description;
+        this.created_at = created_at;
+        this.modified_at = modified_at;
     }
 
     public DriversForms(String name, String description) {
@@ -13,10 +22,13 @@ public class DriversForms {
         this.description = description;
     }
 
-    public DriversForms(String id, String name, String description) {
+    public DriversForms(String id, String name, String description
+            , String created_at, String modified_at) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.created_at = created_at;
+        this.modified_at = modified_at;
     }
 
     public String getId() {
@@ -43,12 +55,30 @@ public class DriversForms {
         this.description = description;
     }
 
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getModified_at() {
+        return modified_at;
+    }
+
+    public void setModified_at(String modified_at) {
+        this.modified_at = modified_at;
+    }
+
     @Override
     public String toString() {
         return "DriversForms{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", created_at='" + created_at + '\'' +
+                ", modified_at='" + modified_at + '\'' +
                 '}';
     }
 }

@@ -2,7 +2,7 @@ package edu.ivs.frtrans.controllers.web;
 
 import edu.ivs.frtrans.forms.DriversForms;
 import edu.ivs.frtrans.model.Drivers;
-import edu.ivs.frtrans.service.drivers.impls.DriverServiceImpl;
+import edu.ivs.frtrans.service.drivers.impls.CrudDriversMongoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,17 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 @Controller
 @RequestMapping("/web/drivers")
     public class DriverWeb {
     @Autowired
-    DriverServiceImpl service;
+    CrudDriversMongoImpl service;
 
     @RequestMapping("/get/all")
     String getAll(Model model) {

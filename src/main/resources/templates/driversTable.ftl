@@ -20,11 +20,11 @@
         <tr>
             <th>id</th>
             <th>Name</th>
-            <th>Phone</th>
-            <th>Adres</th>
+            <#--<th>Phone</th>
+            <th>Adres</th>-->
             <th>Description</th>
-            <#--  <th>Created</th>
-              <th>Modified</th>-->
+              <th>Created</th>
+              <th>Modified</th>
             <th>Delete</th>
             <th>Edit</th>
         </tr>
@@ -34,9 +34,11 @@
             <tr>
                 <td>${element.id}</td>
                 <td>${element.name}</td>
-                <td>${element.phone}</td>
-                <td>${element.adres}</td>
+                <#--<td>${element.phone}</td>
+                <td>${element.adres}</td>-->
                 <td>${element.description}</td>
+                <td>${element.created_at}</td>
+                <td>${element.modified_at}</td>
                 <td><a href="/web/drivers/delete/${element.id}" class="btn btn-warning">Delete</a></td>
                 <td><a href="/web/drivers/update/${element.id}" class="btn btn-outline-danger">Edit</a></td>
 

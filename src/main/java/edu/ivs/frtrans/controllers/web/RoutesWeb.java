@@ -4,6 +4,7 @@ import edu.ivs.frtrans.forms.DriversForms;
 import edu.ivs.frtrans.forms.RoutesForms;
 import edu.ivs.frtrans.model.Drivers;
 import edu.ivs.frtrans.model.Route;
+import edu.ivs.frtrans.service.route.impls.CrudRouteMongoImpl;
 import edu.ivs.frtrans.service.route.impls.RouteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("web/routes")
 public class RoutesWeb {
 @Autowired
-    RouteServiceImpl service;
+CrudRouteMongoImpl service;
     @RequestMapping("/get/all")
     String getAll(Model model) {
 
@@ -55,8 +56,8 @@ public class RoutesWeb {
         RoutesForms routesForms = new RoutesForms();
         routesForms.setId(route.getId());
         routesForms.setName(route.getName());
-        route.setDistance(route.getDistance());
-        route.setDaysOnTheRoad(route.getDaysOnTheRoad());
+        routesForms.setDistance(route.getDistance());
+        routesForms.setDaysOnTheRoad(route.getDaysOnTheRoad());
         routesForms.setDescription(route.getDescription());
         model.addAttribute("form", routesForms);
         return "updateRoutes";

@@ -7,7 +7,7 @@ import java.util.List;
 public interface ICrudRoute {
     Route create(Route route);
     Route get(String id);
-    Route update(Route item);
+    Route update(Route route);
     Route delete(String id);
     List<Route> getAll();
 }
