@@ -19,10 +19,10 @@
         <thead>
         <tr>
             <th>id</th>
-            <th>Name</th>
-            <th>Distance</th>
-            <th>DaysOnTheRoad</th>
-            <th>Description</th>
+            <th>Назва маршруту</th>
+            <th>Відстань(км)</th>
+            <th>Днів у дорозі</th>
+            <th>Примітки</th>
             <#--  <th>Created</th>
               <th>Modified</th>-->
             <th>Delete</th>

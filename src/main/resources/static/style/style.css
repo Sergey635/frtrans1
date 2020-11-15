@@ -1,0 +1,23 @@
+{
+margin: 0;
+padding: 0;
+}
+.container {
+    max-width: 1230px;
+    max-height: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+}
+body{
+    height: 800px;
+    /*background-image: url("https://vinautotruck.com.ua/images/slider_2.jpg");*/
+    background-image: url("https://trello-attachments.s3.amazonaws.com/5faae74927786a3c4789febf/800x600/7294a13a39e97a6c26aeb28320e70431/47044.jpg");
+    width: 100%;
+    background-size: 100%;
+}
+
+h1
+{
+    text-align: center;
+}
