@@ -22,7 +22,7 @@ public class CrudDriversMongoImpl implements IGrudDrivers {
 
     private List<Drivers> list = new ArrayList<>();
 
-    //@PostConstruct
+    @PostConstruct
     void init(){
         list = data.getDrivers();
         list.size();

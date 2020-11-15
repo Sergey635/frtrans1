@@ -22,7 +22,7 @@ public class CrudRouteMongoImpl implements ICrudRoute {
 
     private List<Route> list = new ArrayList<>();
 
-    //@PostConstruct
+    @PostConstruct
     void init(){
         list = data.getRoutes();
         list.size();
