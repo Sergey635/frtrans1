@@ -19,6 +19,8 @@
             <br>
             DaysOnTheRoad:<@spring.formInput "form.daysOnTheRoad" "" "text"/>
             <br>
+            Pay:<@spring.formInput "form.pay" "" "text"/>
+            <br>
             Description:<@spring.formInput "form.description" "" "text"/>
             <br>
             <input type="submit" value="Update"/>

@@ -13,34 +13,38 @@ public class Route {
     private String distance;
     private String daysOnTheRoad;
     private String description;
+    private String pay;
     private LocalDateTime created_at;
     private LocalDateTime modified_at;
 
     public Route() {
     }
 
-    public Route(String name, String distance, String daysOnTheRoad, String description) {
+    public Route(String name, String distance, String daysOnTheRoad, String description, String pay) {
         this.name = name;
         this.distance = distance;
         this.daysOnTheRoad = daysOnTheRoad;
         this.description = description;
+        this.pay = pay;
     }
 
-    public Route(String id, String name, String distance, String daysOnTheRoad, String description) {
+    public Route(String name, String distance, String daysOnTheRoad, String description, String pay, LocalDateTime created_at, LocalDateTime modified_at) {
+        this.name = name;
+        this.distance = distance;
+        this.daysOnTheRoad = daysOnTheRoad;
+        this.description = description;
+        this.pay = pay;
+        this.created_at = created_at;
+        this.modified_at = modified_at;
+    }
+
+    public Route(String id, String name, String distance, String daysOnTheRoad, String description, String pay, LocalDateTime created_at, LocalDateTime modified_at) {
         this.id = id;
         this.name = name;
         this.distance = distance;
         this.daysOnTheRoad = daysOnTheRoad;
         this.description = description;
-    }
-
-    public Route(String id, String name, String distance, String daysOnTheRoad, String description
-            , LocalDateTime created_at, LocalDateTime modified_at) {
-        this.id = id;
-        this.name = name;
-        this.distance = distance;
-        this.daysOnTheRoad = daysOnTheRoad;
-        this.description = description;
+        this.pay = pay;
         this.created_at = created_at;
         this.modified_at = modified_at;
     }
@@ -85,6 +89,14 @@ public class Route {
         this.description = description;
     }
 
+    public String getPay() {
+        return pay;
+    }
+
+    public void setPay(String pay) {
+        this.pay = pay;
+    }
+
     public LocalDateTime getCreated_at() {
         return created_at;
     }
@@ -102,6 +114,20 @@ public class Route {
     }
 
     @Override
+    public String toString() {
+        return "Route{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", distance='" + distance + '\'' +
+                ", daysOnTheRoad='" + daysOnTheRoad + '\'' +
+                ", description='" + description + '\'' +
+                ", pay='" + pay + '\'' +
+                ", created_at=" + created_at +
+                ", modified_at=" + modified_at +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -112,18 +138,5 @@ public class Route {
     @Override
     public int hashCode() {
         return Objects.hash(getId());
-    }
-
-    @Override
-    public String toString() {
-        return "Route{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", distance='" + distance + '\'' +
-                ", daysOnTheRoad='" + daysOnTheRoad + '\'' +
-                ", description='" + description + '\'' +
-                ", created_at=" + created_at +
-                ", modified_at=" + modified_at +
-                '}';
     }
 }

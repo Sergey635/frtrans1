@@ -46,6 +46,7 @@ CrudRouteMongoImpl service;
         route.setDistance(form.getDistance());
         route.setDaysOnTheRoad(form.getDaysOnTheRoad());
         route.setDescription(form.getDescription());
+        route.setPay(form.getPay());
         service.create(route);
         return "redirect:/web/routes/get/all";
     }

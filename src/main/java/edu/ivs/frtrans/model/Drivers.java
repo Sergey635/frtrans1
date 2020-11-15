@@ -13,7 +13,7 @@ public class Drivers {
     private String name;
     private String phone;
     private String adres;
-    private LocalDate expirience;
+    private String experience;
     private String description;
     private LocalDateTime created_at;
     private LocalDateTime modified_at;
@@ -21,33 +21,42 @@ public class Drivers {
     public Drivers() {
     }
 
-    public Drivers(String name, String phone, String adres, LocalDate expirience, String description
-            , LocalDateTime created_at, LocalDateTime modified_at) {
+    public Drivers(String name, String phone, String adres, String experience, String description) {
         this.name = name;
         this.phone = phone;
         this.adres = adres;
-        this.expirience = expirience;
+        this.experience = experience;
+        this.description = description;
+    }
+
+    public Drivers(String name, String phone, String adres, String experience) {
+        this.name = name;
+        this.phone = phone;
+        this.adres = adres;
+        this.experience = experience;
+    }
+
+    public Drivers(String name, String phone, String adres, String experience, String description, LocalDateTime created_at, LocalDateTime modified_at) {
+        this.name = name;
+        this.phone = phone;
+        this.adres = adres;
+        this.experience = experience;
         this.description = description;
         this.created_at = created_at;
         this.modified_at = modified_at;
     }
 
-    public Drivers(String id, String name, String phone, String adres, LocalDate expirience, String description) {
+    public Drivers(String id, String name, String phone, String adres, String experience, String description, LocalDateTime created_at, LocalDateTime modified_at) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.adres = adres;
-        this.expirience = expirience;
+        this.experience = experience;
         this.description = description;
+        this.created_at = created_at;
+        this.modified_at = modified_at;
     }
 
-    public Drivers(String name, String phone, String adres, LocalDate expirience, String description) {
-        this.name = name;
-        this.phone = phone;
-        this.adres = adres;
-        this.expirience = expirience;
-        this.description = description;
-    }
 
     public String getId() {
         return id;
@@ -81,12 +90,12 @@ public class Drivers {
         this.adres = adres;
     }
 
-    public LocalDate getExpirience() {
-        return expirience;
+    public String getExperience() {
+        return experience;
     }
 
-    public void setExpirience(LocalDate expirience) {
-        this.expirience = expirience;
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 
     public String getDescription() {
@@ -120,7 +129,7 @@ public class Drivers {
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", adres='" + adres + '\'' +
-                ", expirience=" + expirience +
+                ", experience='" + experience + '\'' +
                 ", description='" + description + '\'' +
                 ", created_at=" + created_at +
                 ", modified_at=" + modified_at +

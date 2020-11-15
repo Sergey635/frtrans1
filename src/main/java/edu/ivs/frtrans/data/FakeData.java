@@ -12,13 +12,21 @@ import java.util.stream.Stream;
 @Repository
 public class FakeData {
     private List<Drivers> drivers = Stream.of(
-            new Drivers("1", "Володимир Васильович", "0248653485", "Chernivtsi"
-                    , LocalDate.of(1993, Month.JULY, 15), "старий воїн"),
-            new Drivers("2", "Тарас Іванович", "1516546", "Magala"
-                    , LocalDate.of(200, Month.FEBRUARY, 5), "fast"),
-            new Drivers("3", "Олег Олегович", "0248653485", "Chernivtsi"
-                    , LocalDate.of(2010, Month.SEPTEMBER, 23), "newbee")
-    ).collect(Collectors.toList());
+            new Drivers( "Амросій Петро Васильович", "0956734545", "Чернівці",
+                    "10"),
+            new Drivers("Васильков Анатолій Володимирович", "0667899810",
+                    "Чернівці","7.5"),
+            new Drivers("Миколайчук Сергій Сергійович", "0508731656",
+                    "Чернівці","2"),
+            new Drivers("Оріс Дмитро Іванович", "0501322390","3",
+                    "3"),
+            new Drivers("Соломін Андрій Алікович ", "0958993347", "4.5",
+                    "4.5"),
+            new Drivers("Унгурян Олександр Іванович", "0663581221", "3",
+                    "3"),
+            new Drivers("Фрунзе Михайло Юрійович", "0993721688", "8",
+                    "8")
+            ).collect(Collectors.toList());
 
     public List<Drivers> getDrivers() {
         return drivers;
@@ -29,16 +37,24 @@ public class FakeData {
     }
 
     private List<Route> routes = Stream.of(
-            new Route("1","Чернівці - Львів","300","1"
-                    ,"short")
-            , new Route("2", "Чернівці - Варшава", "672"
-                    ,"2", "standart")
-            ,new Route("3", "Будапешт - Чернівці", "670","2"
-            ,"standart")
-            ,new Route("4", "Відень - Київ", "1335", "3"
-            , "long")
-            ,new Route("5", "Львів - Прага", "860", "2"
-            , "standart")
+            new Route("Чернівці – Новодністровськ","219","1"
+                    ,"qqq","1950")
+            , new Route("Чернівці – Могилів-Подільський", "201", "1"
+                    ,"qq", "2375")
+            ,new Route("Чернівці – Київ", "512", "1","qq"
+            ,"4500")
+            ,new Route("Чернівці – Херсон", "755", "1", "qq"
+            , "5250")
+            ,new Route("Чернівці – Одеса", "682", "1", "qq"
+            , "4825"),
+            new Route("Чернівці – Кишинів", "334", "1", "qq"
+                    , "3250"),
+            new Route("Чернівці – Ясси", "233", "1", "qq"
+                    , "2500"),
+            new Route("Чернівці – Мінськ", "804", "1", "qq"
+                    , "7150"),
+            new Route("Чернівці – Варшава", "672", "1", "qq"
+                    , "4900")
             )
             .collect(Collectors.toList());
 

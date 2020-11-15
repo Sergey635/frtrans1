@@ -42,6 +42,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
         System.out.println(form);
         Drivers drivers = new Drivers();
         drivers.setName(form.getName());
+        drivers.setPhone(form.getPhone());
+        drivers.setExperience(form.getExperience());
         drivers.setDescription(form.getDescription());
         service.create(drivers);
         return "redirect:/web/drivers/get/all";

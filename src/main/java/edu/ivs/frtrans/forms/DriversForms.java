@@ -3,6 +3,8 @@ package edu.ivs.frtrans.forms;
 public class DriversForms {
     private String id = " ";
     private String name = " ";
+    private String phone = " ";
+    private String experience = " ";
     private String description = " ";
     private String created_at = " ";
     private String modified_at = " ";
@@ -29,6 +31,22 @@ public class DriversForms {
         this.description = description;
         this.created_at = created_at;
         this.modified_at = modified_at;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 
     public String getId() {
@@ -76,6 +94,8 @@ public class DriversForms {
         return "DriversForms{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", experience='" + experience + '\'' +
                 ", description='" + description + '\'' +
                 ", created_at='" + created_at + '\'' +
                 ", modified_at='" + modified_at + '\'' +

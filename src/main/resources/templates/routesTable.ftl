@@ -19,10 +19,11 @@
         <thead>
         <tr>
             <th>id</th>
-            <th>Name</th>
-            <th>Distance</th>
-            <th>DaysOnTheRoad</th>
-            <th>Description</th>
+            <th>Назва маршруту</th>
+            <th>Відстань (км)</th>
+            <th>Дні у маршруті</th>
+            <th>Оплата</th>
+            <th>Додатково</th>
             <#--  <th>Created</th>
               <th>Modified</th>-->
             <th>Delete</th>
@@ -36,6 +37,7 @@
                 <td>${element.name}</td>
                 <td>${element.distance}</td>
                 <td>${element.daysOnTheRoad}</td>
+                <td>${element.pay}</td>
                 <td>${element.description}</td>
                 <td><a href="/web/route/delete/${element.id}" class="btn btn-warning">Delete</a></td>
                 <td><a href="/web/routes/update/${element.id}" class="btn btn-outline-danger">Edit</a></td>
