@@ -1,15 +1,13 @@
 package edu.ivs.frtrans.controllers.web;
 
 import edu.ivs.frtrans.forms.DriversForms;
+import edu.ivs.frtrans.forms.SearchForm;
 import edu.ivs.frtrans.model.Drivers;
 import edu.ivs.frtrans.service.drivers.impls.CrudDriversMongoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/web/drivers")
@@ -18,10 +16,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
     CrudDriversMongoImpl service;
 
     @RequestMapping("/get/all")
-    String getAll(Model model) {
+    String getAll(Model model ) {
 
         model.addAttribute("drivers", service.getAll());
+        SearchForm search = new SearchForm();
+        model.addAttribute("search", search);
         return "driversTable";
+    }
+    @PostMapping("/get/all")
+    String getAll(Model model,@ModelAttribute("search") SearchForm form){
+        String name = form.getName();
+        model.addAttribute("drivers", service.getByName(name));
+        SearchForm search = new SearchForm();
+        model.addAttribute("search", search);
+        return "driversTable";
+
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.GET)

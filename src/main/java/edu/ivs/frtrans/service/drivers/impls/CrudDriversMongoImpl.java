@@ -12,6 +12,8 @@ import javax.xml.crypto.Data;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class CrudDriversMongoImpl implements IGrudDrivers {
     @Autowired
@@ -57,5 +59,11 @@ public class CrudDriversMongoImpl implements IGrudDrivers {
     @Override
     public List<Drivers> getAll() {
         return repository.findAll();
+    }
+
+    public List<Drivers> getByName(String name) {
+        if (name.equals("")) return this.getAll();
+        return this.getAll().stream().filter(drivers ->drivers.getName().contains(name))
+                .collect(Collectors.toList());
     }
 }

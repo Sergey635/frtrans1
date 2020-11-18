@@ -12,6 +12,15 @@
 
 <h3>Drivers List</h3>
 <br>
+<fieldset>
+    <legend>Add items</legend>
+    <form name="client" action="" method="POST">
+        Search:<@spring.formInput "search.name" "" "text"/>
+        <br>
+        <input type="submit" value="Find"/>
+    </form>
+</fieldset>
+<br>
 <a href="/index.html">Back</a>
 <div>
 
