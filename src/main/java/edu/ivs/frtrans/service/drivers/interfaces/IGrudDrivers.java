@@ -7,7 +7,7 @@ import java.util.List;
 public interface IGrudDrivers {
     Drivers create(Drivers drivers);
     Drivers get(String id);
-    Drivers update(Drivers item);
+    Drivers update(Drivers drivers);
     Drivers delete(String id);
     List<Drivers> getAll();
 }

@@ -76,5 +76,12 @@ import org.springframework.web.bind.annotation.*;
         service.update(drivers);
         return "redirect:/web/drivers/get/all";
     }
+    @RequestMapping(value = "/all/sort", method = RequestMethod.GET)
+    public String sortedByName(Model model) {
+        model.addAttribute("drivers", service.getAllSorted());
+        SearchForm search = new SearchForm();
+        model.addAttribute("search", search);
+        return "driversTable";
+    }
 }
 

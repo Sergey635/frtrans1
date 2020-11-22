@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class CrudRouteMongoImpl implements ICrudRoute {
 
-    @Autowired
+    //@Autowired
     FakeData data;
 
     @Autowired

@@ -11,12 +11,13 @@ import javax.annotation.PostConstruct;
 import javax.xml.crypto.Data;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class CrudDriversMongoImpl implements IGrudDrivers {
-    @Autowired
+    //@Autowired
     FakeData data;
 
     @Autowired
@@ -61,9 +62,17 @@ public class CrudDriversMongoImpl implements IGrudDrivers {
         return repository.findAll();
     }
 
+
+    public List<Drivers> getAllSorted() {
+        List<Drivers> list = repository.findAll();
+        List<Drivers> sorted = list.stream().sorted(Comparator.comparing(Drivers::getName))
+                .collect(Collectors.toList());
+        return sorted;
+    }
     public List<Drivers> getByName(String name) {
         if (name.equals("")) return this.getAll();
         return this.getAll().stream().filter(drivers ->drivers.getName().contains(name))
                 .collect(Collectors.toList());
     }
+
 }

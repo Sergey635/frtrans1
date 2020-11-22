@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class RouteServiceImpl implements ICrudRoute {
-    @Autowired
+    //@Autowired
     FakeData data;
     @Override
     public Route create(Route route) {
