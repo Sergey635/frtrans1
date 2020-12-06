@@ -15,7 +15,7 @@ import java.time.Month;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-//@Repository
+@Repository
 public class FakeData {
     @Autowired
     RecordRepository recordRepository;
@@ -112,6 +112,11 @@ public class FakeData {
 
     public void setRecords(List<Record> records) {
         this.records = records;
+    }
+
+    public List<Record> renewRecords() {
+        recordRepository.deleteAll();
+        return recordRepository.saveAll(records);
     }
 }
 
