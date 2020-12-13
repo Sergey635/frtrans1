@@ -8,14 +8,15 @@
     <link rel="stylesheet"
           type="text/css" href="<@spring.url '/css/style.css'/>"/>
 </head>
+
 <body>
 
 <h3 style="text-align: center">Drivers List</h3>
 <fieldset style="text-align: end">
     <form name="client" action="" method="POST">
-        Search:<@spring.formInput "search.name" "" "text"/>
+        <input type="submit" value="Search"/><@spring.formInput "search.name" "" "text"/>
         <br>
-        <input type="submit" value="Find"/>
+        <#--<input type="submit" value="Find"/>-->
     </form>
 </fieldset>
 
@@ -66,5 +67,7 @@
     <a href="/web/drivers/create">Create</a>
 
 </div>
+
 </body>
+
 </html>

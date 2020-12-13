@@ -1,6 +1,7 @@
 package edu.ivs.frtrans.service.route.impls;
 
 import edu.ivs.frtrans.data.FakeData;
+import edu.ivs.frtrans.model.Drivers;
 import edu.ivs.frtrans.model.Route;
 import edu.ivs.frtrans.repository.RouteRepository;
 import edu.ivs.frtrans.service.route.interfaces.ICrudRoute;
@@ -10,7 +11,10 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class CrudRouteMongoImpl implements ICrudRoute {
 
@@ -57,5 +61,17 @@ public class CrudRouteMongoImpl implements ICrudRoute {
     @Override
     public List<Route> getAll() {
         return repository.findAll();
+    }
+
+    public List<Route> getAllSorted() {
+        List<Route> list = repository.findAll();
+        List<Route> sorted = list.stream().sorted(Comparator.comparing(Route::getName))
+                .collect(Collectors.toList());
+        return sorted;
+    }
+    public List<Route> getByName(String name) {
+        if (name.equals("")) return this.getAll();
+        return this.getAll().stream().filter(route ->route.getName().contains(name))
+                .collect(Collectors.toList());
     }
 }

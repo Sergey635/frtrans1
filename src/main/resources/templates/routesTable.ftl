@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<h3>Routes List</h3>
+<h3 style="text-align: center">Routes List</h3>
 <br>
 <a href="/index.html">Back</a>
 <div>

@@ -8,7 +8,7 @@
     <link rel="stylesheet"
           type="text/css" href="<@spring.url '/css/style.css'/>"/>
 </head>
-<h3>Records List</h3>
+<h3 style="text-align: center">Records List</h3>
 <body>
 <button onclick="window.location.href = '/web/record/all'">Renew</button>
 <br>
@@ -28,12 +28,14 @@
         <thead>
         <tr>
             <th>id</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Start</th>
-            <th>Finish</th>
-            <th>Drivers</th>
-            <th>Build</th>
+            <th>Назва</th>
+            <th>Маршрути</th>
+            <th>Водії</th>
+            <th>Початок</th>
+            <th>Кінець</th>
+            <th>Додатково</th>
+
+          <#--  <th>Build</th>-->
             <th>Delete</th>
             <th>Edit</th>
         </tr>
@@ -43,11 +45,13 @@
             <tr>
                 <td>${element.id}</td>
                 <td>${element.name}</td>
-                <td>${element.description}</td>
+                <td>${element.route.name}</td>
+                <td>${element.drivers.name}</td>
                 <td>${element.start}</td>
                 <td>${element.finish}</td>
-                <td>${element.drivers.name}</td>
-                <td>${element.build.name}</td>
+                <td>${element.description}</td>
+
+               <#-- <td>${element.build.name}</td>-->
                 <#--<td>${element.created_at}</td>
                 <td>${element.modified_at}</td>-->
                 <td><a href="/web/record/delete/${element.id}" class="btn btn-warning">Delete</a></td>

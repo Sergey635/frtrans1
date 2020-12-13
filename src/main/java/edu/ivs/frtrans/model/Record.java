@@ -16,6 +16,7 @@ public class Record {
     private LocalDateTime start;
     private LocalDateTime finish;
     private Drivers drivers;
+    private  Route route;
     private Build build;
     private LocalDateTime created_at;
     private LocalDateTime modified_at;
@@ -23,33 +24,36 @@ public class Record {
     public Record() {
     }
 
-    public Record(String name, String description, LocalDateTime start, LocalDateTime finish, Drivers drivers, Build build) {
+    public Record(String name, String description, LocalDateTime start, LocalDateTime finish, Drivers drivers, Route route, Build build) {
         this.name = name;
         this.description = description;
         this.start = start;
         this.finish = finish;
         this.drivers = drivers;
+        this.route = route;
         this.build = build;
     }
 
-    public Record(String name, String description, LocalDateTime start, LocalDateTime finish, Drivers drivers, Build build, LocalDateTime created_at, LocalDateTime modified_at) {
+    public Record(String name, String description, LocalDateTime start, LocalDateTime finish, Drivers drivers, Route route, Build build, LocalDateTime created_at, LocalDateTime modified_at) {
         this.name = name;
         this.description = description;
         this.start = start;
         this.finish = finish;
         this.drivers = drivers;
+        this.route = route;
         this.build = build;
         this.created_at = created_at;
         this.modified_at = modified_at;
     }
 
-    public Record(String id, String name, String description, LocalDateTime start, LocalDateTime finish, Drivers drivers, Build build, LocalDateTime created_at, LocalDateTime modified_at) {
+    public Record(String id, String name, String description, LocalDateTime start, LocalDateTime finish, Drivers drivers, Route route, Build build, LocalDateTime created_at, LocalDateTime modified_at) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.start = start;
         this.finish = finish;
         this.drivers = drivers;
+        this.route = route;
         this.build = build;
         this.created_at = created_at;
         this.modified_at = modified_at;
@@ -103,6 +107,14 @@ public class Record {
         this.drivers = drivers;
     }
 
+    public Route getRoute() {
+        return route;
+    }
+
+    public void setRoute(Route route) {
+        this.route = route;
+    }
+
     public Build getBuild() {
         return build;
     }
@@ -149,6 +161,7 @@ public class Record {
                 ", start=" + start +
                 ", finish=" + finish +
                 ", drivers=" + drivers +
+                ", route=" + route +
                 ", build=" + build +
                 ", created_at=" + created_at +
                 ", modified_at=" + modified_at +

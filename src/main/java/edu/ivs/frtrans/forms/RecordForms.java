@@ -13,6 +13,7 @@ public class RecordForms {
     private String start = " ";
     private String finish = " ";
     private String drivers = " ";
+    private String route = " ";
     private String build = " ";
     private String created_at = " ";
     private String modified_at = " ";
@@ -50,6 +51,14 @@ public class RecordForms {
         this.build = build;
         this.created_at = created_at;
         this.modified_at = modified_at;
+    }
+
+    public String getRoute() {
+        return route;
+    }
+
+    public void setRoute(String route) {
+        this.route = route;
     }
 
     public String getId() {

@@ -83,14 +83,14 @@ public class FakeData {
     }
 
     private List<Record> records = Stream.of(
-            new Record("1","record1","desk1",LocalDateTime.now(),LocalDateTime.now(),
-                    drivers.get(0), builds.get(0),LocalDateTime.now(), LocalDateTime.now()),
-            new Record("2","record2","desk2",LocalDateTime.now(),LocalDateTime.now(),
-                    drivers.get(1), builds.get(1),LocalDateTime.now(), LocalDateTime.now()),
-            new Record("3","record3","desk3",LocalDateTime.now(),LocalDateTime.now(),
-                    drivers.get(2), builds.get(2),LocalDateTime.now(), LocalDateTime.now()),
-            new Record("4","record4","desk4",LocalDateTime.now(),LocalDateTime.now(),
-                    drivers.get(3), builds.get(3),LocalDateTime.now(), LocalDateTime.now()))
+            new Record("1","Маршрут 1","desk1",LocalDateTime.now(),LocalDateTime.now(),
+                    drivers.get(0), routes.get(0), builds.get(0),LocalDateTime.now(), LocalDateTime.now()),
+            new Record("2","Маршрут 2","desk2",LocalDateTime.now(),LocalDateTime.now(),
+                    drivers.get(1), routes.get(1), builds.get(1),LocalDateTime.now(), LocalDateTime.now()),
+            new Record("3","Маршрут 3","desk3",LocalDateTime.now(),LocalDateTime.now(),
+                    drivers.get(2), routes.get(2), builds.get(2),LocalDateTime.now(), LocalDateTime.now()),
+            new Record("4","Мвршрут4","desk4",LocalDateTime.now(),LocalDateTime.now(),
+                    drivers.get(3), routes.get(3), builds.get(3),LocalDateTime.now(), LocalDateTime.now()))
             .collect(Collectors.toList());
 
     @PostConstruct

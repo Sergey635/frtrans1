@@ -7,6 +7,7 @@ import edu.ivs.frtrans.forms.SearchForm;
 import edu.ivs.frtrans.model.Build;
 import edu.ivs.frtrans.model.Drivers;
 import edu.ivs.frtrans.model.Record;
+import edu.ivs.frtrans.model.Route;
 import edu.ivs.frtrans.service.drivers.impls.CrudDriversMongoImpl;
 import edu.ivs.frtrans.service.drivers.impls.DriverServiceImpl;
 import edu.ivs.frtrans.service.record.impls.ServiceRecordMongoImpl;
@@ -32,6 +33,9 @@ public class RecordWeb {
 
     @Autowired
     CrudDriversMongoImpl driversMongo;
+
+    @Autowired
+    CrudRouteMongoImpl routeMongo;
 
     @Autowired
     FakeData fakeData;
@@ -114,9 +118,17 @@ public class RecordWeb {
         drivers.remove(driversName);
         drivers.add(0,driversName);
         record.setDrivers(drivers1);
+        List<String> route = routeMongo.getAll()
+                .stream().map(route1 -> route1.getName())
+                .collect(Collectors.toList());
+        String routeName = recordForms.getRoute();
+        Route route1 = routeMongo.getByName(routeName).get(0);
+        route.remove(routeName);
+        record.setRoute(route1);
         // recordForm.setBuild(record.getBuild());
         model.addAttribute("form", recordForms);
         model.addAttribute("drivers", drivers);
+        model.addAttribute("route", route);
         return "updateRecords";
     }
 
@@ -131,6 +143,9 @@ public class RecordWeb {
         String driversName = recordForms.getDrivers();
         Drivers drivers = driversMongo.getByName(driversName).get(0);
         record.setDrivers(drivers);
+        String routeName = recordForms.getRoute();
+        Route route = routeMongo.getByName(routeName).get(0);
+        record.setRoute(route);
         service.update(record);
         return "redirect:/web/record/all";
     }
